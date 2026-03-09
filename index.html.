@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FinTech Demo - Custom</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      color: white;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.37);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    h1 { text-align: center; margin-bottom: 10px; }
+    .greeting { font-size: 1.4em; text-align: center; margin-bottom: 30px; }
+    .balance-section {
+      background: rgba(0,0,0,0.3);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .label { font-size: 1.1em; opacity: 0.8; }
+    .amount { font-size: 2.8em; font-weight: bold; color: #00ff9d; }
+    .sign-in-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input[type="text"] {
+      padding: 14px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.15);
+      color: white;
+    }
+    input[type="text"]::placeholder { color: rgba(255,255,255,0.6); }
+    button {
+      padding: 14px;
+      font-size: 1.2em;
+      background: #00c853;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover { background: #00b140; }
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .action-btn {
+      background: rgba(255,255,255,0.08);
+      padding: 15px 10px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .action-btn:hover { background: rgba(255,255,255,0.15); }
+    footer { text-align: center; margin-top: 40px; opacity: 0.7; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FinTech UI — Custom Demo</h1>
+    
+    <div id="greeting" class="greeting">Hi, Guest</div>
+    
+    <div class="balance-section">
+      <div class="label">Available Profit / Balance</div>
+      <div class="amount">₱431,000.00</div>
+    </div>
+
+    <div class="sign-in-form">
+      <input type="text" id="nameInput" placeholder="Enter your name" />
+      <button onclick="signIn()">Sign In</button>
+    </div>
+
+    <div class="actions">
+      <div class="action-btn">📱 Airtime</div>
+      <div class="action-btn">💡 Bills</div>
+      <div class="action-btn">🏦 Savings</div>
+      <div class="action-btn">🚌 Transport</div>
+      <div class="action-btn">🛍️ Shop</div>
+      <div class="action-btn">🎁 Rewards</div>
+    </div>
+
+    <footer>Demo Only • Not Real Money</footer>
+  </div>
+
+  <script>
+    function signIn() {
+      const name = document.getElementById('nameInput').value.trim();
+      if (name) {
+        document.getElementById('greeting').textContent = `Hi, ${name}!`;
+        alert(`Welcome, ${name}! Your balance is ₱431,000.00 (demo only)`);
+      } else {
+        alert("Please enter a name!");
+      }
+    }
+  </script>
+</body>
+</html>
